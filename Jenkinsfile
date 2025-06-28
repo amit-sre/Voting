@@ -2,15 +2,16 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('checkout') {
             steps {
-                echo 'Building...'
+                git branch: 'main', url: 'https://github.com/amit-sre/Voting/tree/main/vote'
                 // Add your build commands here
             }
         }
-        stage('Test') {
+        stage('Build') {
             steps {
-                echo 'Testing...'
+                docker buld -t voting-app .
+                echo 'Building the application...'
                 // Add your test commands here
             }
         }
