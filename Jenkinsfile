@@ -5,11 +5,7 @@ pipeline {
         stage('checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/amit-sre/Voting/tree/main/vote'
-                //withCredentials([string(credentialsId: 'github-cred', variable: 'GITHUB_TOKEN')]) 
-                {
-                 //   sh 'curl -H "Authorization: token $GITHUB_TOKEN" https://api.github.com/repos/amit-sre/Voting/contents/vote'
-                }
-                // Add your build commands here
+                echo 'Checking out the code from the repository...'
             }
         }
         stage('Build') {
