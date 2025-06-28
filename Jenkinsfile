@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                docker buld -t voting-app .
+                docker build -t voting-app .
                 echo 'Building the application...'
                 // Add your test commands here
             }
