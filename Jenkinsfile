@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sudo docker build -t voting-app .
+                //sudo docker build -t voting-app .
                 echo 'Building the application...'
                 // Add your test commands here
             }
