@@ -4,13 +4,13 @@ pipeline {
     stages {
         stage('checkout') {
             steps {
-                //git branch: 'main', url: 'https://github.com/amit-sre/Voting/tree/main/vote'
+                git branch: 'main', url: 'https://github.com/amit-sre/Voting/tree/main/vote'
                 // Add your build commands here
             }
         }
         stage('Build') {
             steps {
-                sudo docker build -t voting-app .
+                //sudo docker build -t voting-app .
                 echo 'Building the application...'
                 // Add your test commands here
             }
